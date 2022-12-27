@@ -1,0 +1,96 @@
+{% extends "homebase.html" %}
+    {% load static %}
+
+{% block title %}Contact us- {{setting.title}}{% endblock %}
+{% block description %}{{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock %}
+
+{% block header %}{% include "header.html" %}{% endblock %}
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+
+
+{% block body %}
+
+
+	    <!-- BREADCRUMB -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Contact</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
+
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+
+
+            				<form id="checkout-form" class="clearfix" method="post">
+
+					<div class="col-md-4">
+							<div class="section-title">
+								<h3 class="title">Contactez-nous</h3>
+
+								{% if messages%}
+								    {% for message in messages %}
+						<div class="alert alert-{{message.tags}}" role="alert">
+							{{message}}
+
+									{% endfor %}
+								{% endif %}
+						</div>
+								{% csrf_token %}
+						{{form.as_p}}
+
+						<input type="submit" value="Envoyer">
+
+
+							<div class="section-title">
+									<h4 class="title">Nos informations</h4>
+							</div>
+
+											Address:	Boulevard Khouribga, Galerie Chems N°20  <br>
+											Casablanca - Morocco<br>
+											Telephone:	00212-522-307220 (LG)<br>
+											E-mail:	ihssanpa@hotmail.com<br>
+											Web	:www.ihssanpa.com<br>
+
+						</div>
+
+
+
+                <div class="col-md-8">
+
+					<div class="section-title">
+									<h4 class="title">Notre position</h4>
+					</div>
+
+                    <div id="map1" class="map">
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13294.419473474829!2d-7.6065461!3d33.5896071!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7991e8b0ea750460!2sIHSSAN%20PIECES%20AUTOS!5e0!3m2!1sar!2sma!4v1591833491157!5m2!1sar!2sma" width="500" height="520" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+{% block foot %}{% include "footer.html" %}{% endblock %}

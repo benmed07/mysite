@@ -1,0 +1,100 @@
+{% extends "homebase.html" %}
+    {% load static %}
+
+{% block title %}Familles- {{setting.title}}{% endblock %}
+{% block description %}{{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock %}
+
+{% block header %}{% include "header.html" %}{% endblock %}
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+
+{% block slider %}{% include "slider.html" %}{% endblock %}
+
+{% block body %}
+
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="/">Home</a></li>
+				<li class="active">Familles</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+
+		<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+				<!-- MAIN -->
+				<div id="main" class="col-md-12">
+					<!-- store top filter -->
+					<!-- /store top filter -->
+
+					<!-- STORE -->
+					<div id="store">
+						<!-- row -->
+						<div class="row">
+
+
+						<div class="col-md-12">
+							<div class="section-title">
+								<h3 class="title">Famille list</h3>
+							</div>
+						</div>
+						<div class="col-md-12">
+												{% for rs in category %}
+											<!-- Product Single -->
+											<div class="col-md-3 col-sm-6 col-xs-6 style="height=400px">
+												<div class="product product-single">
+													<div class="product-thumb">
+
+									<a href="/category/{{ rs.id }}/{{ rs.slug }}">
+										<img src="{{'images/'}}{{ rs.image }}" alt="" style="height:80px">
+									</a>
+													</div>
+
+													<div class="product-body">
+														<div class="product-name"><a href="/category/{{ rs.id }}/{{ rs.slug }}">{{rs.title}}</a></div>
+
+													</div>
+												</div>
+											</div>
+
+												{% endfor %}
+
+						</div>
+
+
+						<!-- /row -->
+						</div>
+					<!-- /STORE -->
+					</div>
+					<!-- store bottom filter -->
+
+
+						</div>
+				</div>
+					<!-- /store bottom filter -->
+				</div>
+				<!-- /MAIN -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /section -->
+
+
+
+
+
+
+{% endblock %}
+
+		{% block foot %}{% include "footer.html" %}{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "homebase.html" %}
+    {% load static %}
+
+{% block title %}About us- {{setting.title}}{% endblock %}
+{% block description %}{{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock %}
+
+{% block header %}{% include "header.html" %}{% endblock %}
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+
+
+{% block body %}
+
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="/">Home</a></li>
+				<li class="active">About us</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+                {{setting.aboutus|safe}}
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+
+
+
+
+
+
+{% endblock %}
+
+{% block foot %}{% include "footer.html" %}{% endblock %}
